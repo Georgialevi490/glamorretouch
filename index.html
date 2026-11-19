@@ -201,6 +201,7 @@ ul.list{padding-left:20px;margin-top:12px}
 <form id="apply" method="POST" enctype="multipart/form-data" action="https://formsubmit.co/info.glamorretouch@gmail.com">
 <input type="hidden" name="_subject" value="New Retouch Glamor job application">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" name="_replyto" id="applicant-replyto" value="">
 <label>Full name<input name="name" required autocomplete="name"></label>
 <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
 <label>Email<input name="email" type="email" required autocomplete="email"></label>
@@ -216,7 +217,7 @@ ul.list{padding-left:20px;margin-top:12px}
 </fieldset>
 <label style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" required style="margin-top:6px">I confirm I am a Kenyan citizen and agree that Retouch Glamor may store my documents to process my application.</label>
 <button class="btn" type="submit">Send application</button>
-<p class="note" id="msg" role="status">Please keep all uploaded files together under 10 MB. After your first test submission, check info.glamorretouch@gmail.com for a FormSubmit activation email and confirm the address.</p>
+<p class="note" id="msg" role="status">Please keep the combined size of all uploaded files under 10 MB. You will receive a submission confirmation after sending your application.</p>
 </form>
 </div></section></div>
 
@@ -256,12 +257,13 @@ function show(){
 }
 window.addEventListener('hashchange',show);show();
 const f=document.getElementById('apply');
-f.addEventListener('submit',e=>{
-  if(f.action.includes('YOUR_FORM_ID')){
-    e.preventDefault();
-    document.getElementById('msg').textContent='Form not connected yet. Add your Formspree or Web3Forms address in the form action.';
-  }
-});
+if (f) {
+  f.addEventListener('submit', () => {
+    const applicantEmail = f.querySelector('input[name="email"]');
+    const replyTo = document.getElementById('applicant-replyto');
+    if (applicantEmail && replyTo) replyTo.value = applicantEmail.value.trim();
+  });
+}
 </script>
 </body>
 </html>
