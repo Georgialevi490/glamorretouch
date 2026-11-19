@@ -198,27 +198,20 @@ ul.list{padding-left:20px;margin-top:12px}
 
 <h2 style="margin-top:56px">Apply online</h2>
 <p class="lead">or send via email to <a href="mailto:info.glamorretouch@gmail.com">info.glamorretouch@gmail.com</a>.</p>
-<form id="apply" method="POST" enctype="multipart/form-data" action="https://formsubmit.co/info.glamorretouch@gmail.com">
-<input type="hidden" name="_subject" value="New Retouch Glamor job application">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_replyto" id="applicant-replyto" value="">
-<label>Full name<input name="name" required autocomplete="name"></label>
-<label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
-<label>Email<input name="email" type="email" required autocomplete="email"></label>
-<label>Position<select name="position" required><option>Model</option><option>Online orientation</option></select></label>
-<fieldset><legend>Documents</legend>
-<label>Kenyan CV (PDF or Word)<input name="cv" type="file" accept=".pdf,.doc,.docx" required></label>
-<label>Identification card (photo or PDF)<input name="id_card" type="file" accept="image/*,.pdf" required></label>
-<label>Passport photo<input name="passport_photo" type="file" accept="image/*" required></label>
-</fieldset>
-<fieldset><legend>Orientation photos</legend>
-<label>Upload as many photos as you like<input name="photos" type="file" accept="image/*" multiple></label>
-<label>Add another batch<input name="photos_2" type="file" accept="image/*" multiple></label>
-</fieldset>
-<label style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" required style="margin-top:6px">I confirm I am a Kenyan citizen and agree that Retouch Glamor may store my documents to process my application.</label>
-<button class="btn" type="submit">Send application</button>
-<p class="note" id="msg" role="status">Please keep the combined size of all uploaded files under 10 MB. You will receive a submission confirmation after sending your application.</p>
-</form>
+<div class="google-form-wrap" style="margin-top:28px;background:#fff;border:1px solid #ead5df;padding:12px;border-radius:4px;overflow:hidden">
+<iframe
+  src="https://docs.google.com/forms/d/e/1FAIpQLScRLA0smMMZ92BfDHsXzUQU6bKX7ilGYb5PdQLlcYjQfTUhGQ/viewform?embedded=true"
+  width="100%"
+  height="1500"
+  frameborder="0"
+  marginheight="0"
+  marginwidth="0"
+  title="Retouch Glamor online application form"
+  loading="lazy">
+  Loading application form…
+</iframe>
+</div>
+<p class="note" style="margin-top:14px">If the application form does not appear, <a href="https://forms.gle/ckpKGQfMvHACTVmd6" target="_blank" rel="noopener">open the application form in a new tab</a>. Google may ask applicants to sign in to upload files.</p>
 </div></section></div>
 
 <!-- CONTACT -->
@@ -256,14 +249,6 @@ function show(){
   window.scrollTo(0,0);
 }
 window.addEventListener('hashchange',show);show();
-const f=document.getElementById('apply');
-if (f) {
-  f.addEventListener('submit', () => {
-    const applicantEmail = f.querySelector('input[name="email"]');
-    const replyTo = document.getElementById('applicant-replyto');
-    if (applicantEmail && replyTo) replyTo.value = applicantEmail.value.trim();
-  });
-}
 </script>
 </body>
 </html>
