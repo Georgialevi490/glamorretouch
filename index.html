@@ -48,6 +48,10 @@ h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.15;marg
 .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .job{border:1px solid var(--rose);padding:24px;margin-top:20px}
 .job strong{color:var(--rose)}
+.view#vacancies>section{background:#f3dce5;color:#2b1a26}
+.view#vacancies .job{background:#3b0d2e;color:#fff;border-color:#c9a24a}
+.view#vacancies .job strong{color:#f2c96d}
+.view#vacancies h2{color:#3b0d2e}
 footer{background:var(--plum);color:var(--white);padding:48px 0;font-size:.95rem}
 footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
 footer a{color:var(--gold)}
@@ -194,7 +198,9 @@ ul.list{padding-left:20px;margin-top:12px}
 
 <h2 style="margin-top:56px">Apply online</h2>
 <p class="lead">or send via email to <a href="mailto:info.glamorretouch@gmail.com">info.glamorretouch@gmail.com</a>.</p>
-<form id="apply" method="POST" enctype="multipart/form-data" action="https://formspree.io/f/YOUR_FORM_ID">
+<form id="apply" method="POST" enctype="multipart/form-data" action="https://formsubmit.co/info.glamorretouch@gmail.com">
+<input type="hidden" name="_subject" value="New Retouch Glamor job application">
+<input type="hidden" name="_template" value="table">
 <label>Full name<input name="name" required autocomplete="name"></label>
 <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
 <label>Email<input name="email" type="email" required autocomplete="email"></label>
@@ -210,7 +216,7 @@ ul.list{padding-left:20px;margin-top:12px}
 </fieldset>
 <label style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" required style="margin-top:6px">I confirm I am a Kenyan citizen and agree that Retouch Glamor may store my documents to process my application.</label>
 <button class="btn" type="submit">Send application</button>
-<p class="note" id="msg" role="status"></p>
+<p class="note" id="msg" role="status">Please keep all uploaded files together under 10 MB. After your first test submission, check info.glamorretouch@gmail.com for a FormSubmit activation email and confirm the address.</p>
 </form>
 </div></section></div>
 
@@ -219,7 +225,7 @@ ul.list{padding-left:20px;margin-top:12px}
 <div class="pagehead"><div class="wrap"><h1>Contact</h1><p>Find us at Sarit Centre.</p></div></div>
 <section><div class="wrap split">
 <div><h2>Visit or write</h2><p class="lead"><strong>Retouch Glamor</strong><br>Sarit Centre, 3rd Floor<br>Westlands, Nairobi, Kenya<br><br>Email: <a href="mailto:info.glamorretouch@gmail.com">info.glamorretouch@gmail.com</a></p></div>
-<div class="card"><h3>Opening hours</h3><p>Add your hours here.</p></div>
+<div class="card"><h3>Opening hours</h3><p><strong>Monday – Friday:</strong> 8:00 AM – 5:00 PM<br><strong>Saturday:</strong> 9:00 AM – 2:00 PM<br><strong>Sunday:</strong> Closed</p></div>
 </div></section></div>
 </main>
 
